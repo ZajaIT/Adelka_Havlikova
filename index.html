@@ -1054,41 +1054,6 @@ html{
         width:100%;
     }
 
-   .page::before{
-    top:72px;
-    left:0;
-    transform:none;
-
-    width:100%;
-    height:calc(100% - 72px);
-
-    background-size:auto 700px;
-    background-position:top center;
-    background-repeat:repeat-y;
-
-    -webkit-mask-image:
-        linear-gradient(
-            90deg,
-            #000 0%,
-            #000 9%,
-            transparent 24%,
-            transparent 76%,
-            #000 91%,
-            #000 100%
-        );
-
-    mask-image:
-        linear-gradient(
-            90deg,
-            #000 0%,
-            #000 9%,
-            transparent 24%,
-            transparent 76%,
-            #000 91%,
-            #000 100%
-        );
-}
-
     .header{
         height:72px;
     }
@@ -1378,6 +1343,45 @@ mask-image:
 .contact > *{
     position:relative;
     z-index:21;
+}
+
+   @media(max-width:800px){
+
+    .page::before{
+        top:72px;
+        left:0;
+        transform:none;
+
+        width:100%;
+        height:calc(100% - 72px);
+
+        background-size:auto 700px;
+        background-position:top center;
+        background-repeat:repeat-y;
+
+        -webkit-mask-image:
+            linear-gradient(
+                90deg,
+                #000 0%,
+                #000 9%,
+                transparent 24%,
+                transparent 76%,
+                #000 91%,
+                #000 100%
+            );
+
+        mask-image:
+            linear-gradient(
+                90deg,
+                #000 0%,
+                #000 9%,
+                transparent 24%,
+                transparent 76%,
+                #000 91%,
+                #000 100%
+            );
+    }
+
 }
 
 </style>
