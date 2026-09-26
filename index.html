@@ -44,6 +44,7 @@
 html{
     scroll-behavior:smooth;
     scroll-padding-top:88px;
+    overflow-x:hidden;
 }
 
 body{
@@ -580,6 +581,10 @@ color:#fff;
     background:rgba(20,15,18,.28);
 }
 
+   .gallery-cta{
+    display:none;
+}
+
 
 /* =========================================================
    ČERNÝ PŘEDĚL
@@ -1071,6 +1076,11 @@ color:#fff;
 
 .nav-links .mobile-buy a::after{
     display:none;
+}
+   .gallery-cta{
+    display:flex;
+    justify-content:center;
+    margin-top:35px;
 }
 
 html{
@@ -1602,6 +1612,13 @@ mask-image:
         <div class="gallery-item"><img src="30_sperky.webp" alt="Ručně vyráběné šperky od Adélky"></div>
 
     </div>
+
+   <div class="gallery-cta">
+    <a href="#kontakt" class="btn">
+        Kde nakoupit
+        <span>→</span>
+    </a>
+</div>
 
 </section>
 
