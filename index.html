@@ -293,6 +293,17 @@ button{
     background:#222;
     transition:.25s;
 }
+   .menu-toggle.active span:nth-child(1){
+    transform:translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2){
+    opacity:0;
+}
+
+.menu-toggle.active span:nth-child(3){
+    transform:translateY(-7px) rotate(-45deg);
+}
 
 
 /* =========================================================
@@ -1367,6 +1378,8 @@ mask-image:
 
    @media(max-width:800px){
 
+    @media(max-width:800px){
+
     .page::before{
         top:72px;
         left:0;
@@ -1375,31 +1388,15 @@ mask-image:
         width:100%;
         height:calc(100% - 72px);
 
-        background-size:150% auto;
+        background-image:url("background1.png");
+        background-size:100% auto;
         background-position:top center;
         background-repeat:repeat-y;
 
-        -webkit-mask-image:
-            linear-gradient(
-                90deg,
-                #000 0%,
-                #000 9%,
-                transparent 24%,
-                transparent 76%,
-                #000 91%,
-                #000 100%
-            );
+        -webkit-mask-image:none;
+        mask-image:none;
 
-        mask-image:
-            linear-gradient(
-                90deg,
-                #000 0%,
-                #000 9%,
-                transparent 24%,
-                transparent 76%,
-                #000 91%,
-                #000 100%
-            );
+        opacity:1;
     }
 
 }
@@ -1839,6 +1836,7 @@ const navAnchors = navLinks.querySelectorAll("a");
 menuToggle.addEventListener("click", () => {
 
     navLinks.classList.toggle("active");
+    menuToggle.classList.toggle("active");
     document.body.classList.toggle("menu-open");
 
 });
@@ -1848,6 +1846,7 @@ navAnchors.forEach(link => {
     link.addEventListener("click", () => {
 
         navLinks.classList.remove("active");
+        menuToggle.classList.remove("active");
         document.body.classList.remove("menu-open");
 
     });
