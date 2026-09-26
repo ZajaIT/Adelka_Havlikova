@@ -999,6 +999,10 @@ color:#fff;
     right:25px;
 }
 
+   .mobile-buy{
+    display:none;
+}
+
 
 /* =========================================================
    TABLET
@@ -1041,6 +1045,33 @@ color:#fff;
 ========================================================= */
 
 @media(max-width:800px){
+
+   .mobile-buy{
+    display:block;
+    margin-top:12px;
+}
+
+.nav-links .mobile-buy a{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:14px 28px;
+    border:1px solid var(--pink-dark);
+    border-radius:40px;
+
+    background:linear-gradient(100deg,#d67d98,#efb2c4);
+    color:#fff;
+
+    font-size:.72rem;
+    font-weight:500;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+}
+
+.nav-links .mobile-buy a::after{
+    display:none;
+}
 
 html{
     scroll-padding-top:72px;
@@ -1376,8 +1407,6 @@ mask-image:
     z-index:21;
 }
 
-   @media(max-width:800px){
-
     @media(max-width:800px){
 
     .page::before{
@@ -1424,6 +1453,11 @@ mask-image:
             <li><a href="#o-adelce">Adélka</a></li>
             <li><a href="#pribeh">Můj svět</a></li>
             <li><a href="#kontakt">Kontakt</a></li>
+
+           <li class="mobile-buy">
+    <a href="#kontakt">Kde nakoupit</a>
+</li>
+           
         </ul>
 
 <a href="#kontakt" class="nav-buy">
