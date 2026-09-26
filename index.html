@@ -1006,6 +1006,9 @@ color:#fff;
    .mobile-buy{
     display:none;
 }
+   .about-photo-mobile{
+    display:none;
+}
 
 
 /* =========================================================
@@ -1292,14 +1295,22 @@ html{
         padding:55px 27px;
     }
 
-    .about-photo{
-        max-width:470px;
-        margin:auto;
-    }
+   .about-photo{
+    display:none;
+}
 
-    .about-photo img{
-        height:500px;
-    }
+.about-photo-mobile{
+    display:block;
+    width:270px;
+    margin:28px auto 32px;
+}
+
+.about-photo-mobile img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    border-radius:22px 22px 22px 65px;
+}
 
     .about-content{
         text-align:center;
@@ -1369,11 +1380,6 @@ html{
 .gallery-item:nth-child(28){
     height:250px;
 }
-
-    .about-photo img{
-        height:410px;
-    }
-
     .section-title{
         font-size:1.45rem;
     }
@@ -1692,6 +1698,11 @@ mask-image:
         <h2 class="section-title">
             Adélka
         </h2>
+
+       <div class="about-photo-mobile">
+    <img src="adelka.webp"
+         alt="Adélka – autorka ručně vyráběných šperků">
+</div>
 
         <p>
             Jmenuji se Adélka, je mi 22 let a už odmalička mě baví
