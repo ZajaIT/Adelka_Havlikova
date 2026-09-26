@@ -1093,7 +1093,7 @@ html{
 }
 
    .nav-links{
-    display:none;
+    display:flex;
     position:fixed;
     top:72px;
     right:0;
@@ -1108,10 +1108,30 @@ html{
 
     background:#fff;
     z-index:101;
+
+    opacity:0;
+    visibility:hidden;
+    transform:translateX(35px);
+
+    transition:
+        opacity .4s ease,
+        transform .4s ease,
+        visibility 0s linear .4s;
+
+    pointer-events:none;
 }
 
 .nav-links.active{
-    display:flex;
+    opacity:1;
+    visibility:visible;
+    transform:translateX(0);
+
+    transition:
+        opacity .4s ease,
+        transform .4s ease,
+        visibility 0s;
+
+    pointer-events:auto;
 }
 
     .nav-links a{
