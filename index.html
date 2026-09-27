@@ -2097,6 +2097,33 @@ lightboxNext.addEventListener("click",(event) => {
 
 });
 
+   /* =========================================================
+   SWIPE V LIGHTBOXU – MOBIL
+========================================================= */
+
+let touchStartX = 0;
+let touchEndX = 0;
+
+lightbox.addEventListener("touchstart", (event) => {
+    touchStartX = event.changedTouches[0].screenX;
+}, { passive: true });
+
+lightbox.addEventListener("touchend", (event) => {
+    touchEndX = event.changedTouches[0].screenX;
+
+    const swipeDistance = touchEndX - touchStartX;
+
+    // swipe doleva = další fotka
+    if (swipeDistance < -50) {
+        showImage(currentImage + 1);
+    }
+
+    // swipe doprava = předchozí fotka
+    if (swipeDistance > 50) {
+        showImage(currentImage - 1);
+    }
+}, { passive: true });
+
 
 document.addEventListener("keydown",(event) => {
 
