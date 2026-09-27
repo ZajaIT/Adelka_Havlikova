@@ -1511,6 +1511,81 @@ mask-image:
 
 }
 
+   /* =========================================================
+   JEMNÉ ANIMACE
+========================================================= */
+
+/* HERO TEXT */
+.hero-content{
+    animation:heroTextIn .8s ease-out both;
+}
+
+/* HERO FOTO */
+.hero-photo{
+    animation:heroPhotoIn 1s ease-out both;
+}
+
+.hero-photo img{
+    animation:heroImageIn 1.3s ease-out both;
+}
+
+@keyframes heroTextIn{
+    from{
+        opacity:0;
+        transform:translateY(14px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes heroPhotoIn{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
+
+@keyframes heroImageIn{
+    from{
+        transform:scale(1.035);
+    }
+    to{
+        transform:scale(1);
+    }
+}
+   /* ANIMACE PŘI SCROLLU */
+
+.reveal{
+    opacity:0;
+    transform:translateY(22px);
+    transition:
+        opacity .7s ease,
+        transform .7s ease;
+}
+
+.reveal.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+   @media (prefers-reduced-motion: reduce){
+    .hero-content,
+    .hero-photo,
+    .hero-photo img{
+        animation:none;
+    }
+
+    .reveal{
+        opacity:1;
+        transform:none;
+        transition:none;
+    }
+}
+
 </style>
 </head>
 
@@ -2143,6 +2218,37 @@ document.addEventListener("keydown",(event) => {
         showImage(currentImage + 1);
     }
 
+});
+
+   /* =========================================================
+   JEMNÉ ANIMACE PŘI SCROLLU
+========================================================= */
+
+const revealElements = document.querySelectorAll(
+    ".gallery-heading, .gallery, .quote-band h2, .quote-band p, .about-photo, .about-content, .story-inner, .final-inner, .contact > *"
+);
+
+revealElements.forEach(element => {
+    element.classList.add("reveal");
+});
+
+const revealObserver = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if(entry.isIntersecting){
+            entry.target.classList.add("visible");
+            revealObserver.unobserve(entry.target);
+        }
+
+    });
+
+}, {
+    threshold:0.12
+});
+
+revealElements.forEach(element => {
+    revealObserver.observe(element);
 });
 
 </script>
