@@ -1968,6 +1968,14 @@ mask-image:
 
 </div>
 
+   <script>
+    history.scrollRestoration = "manual";
+
+    window.addEventListener("beforeunload", function () {
+        window.scrollTo(0, 0);
+    });
+</script>
+
 
 <script>
 
@@ -2108,10 +2116,6 @@ document.addEventListener("keydown",(event) => {
         showImage(currentImage + 1);
     }
 
-});
-
-   window.addEventListener("load", () => {
-    window.scrollTo(0, 0);
 });
 
 </script>
