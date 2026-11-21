@@ -2159,6 +2159,76 @@ mask-image:
 }
 
 
+/* =========================================
+   ROZBALOVACÍ MENU GALERIE – PC
+========================================= */
+
+@media (min-width: 1051px) {
+
+    .nav-dropdown {
+        position: relative;
+    }
+
+    .nav-dropdown-toggle {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        border: none;
+        background: transparent;
+        color: inherit;
+        font: inherit;
+        text-transform: uppercase;
+        letter-spacing: inherit;
+        cursor: pointer;
+    }
+
+    .dropdown-arrow {
+        font-size: 18px;
+        line-height: 1;
+        transition: transform .25s ease;
+    }
+
+    .nav-dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        min-width: 190px;
+        padding: 12px 0;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 8px 28px rgba(0,0,0,.12);
+        z-index: 100;
+        list-style: none;
+    }
+
+    .nav-dropdown:hover .nav-dropdown-menu,
+    .nav-dropdown:focus-within .nav-dropdown-menu {
+        display: block;
+    }
+
+    .nav-dropdown-menu li {
+        width: 100%;
+    }
+
+    .nav-dropdown-menu a {
+        display: block;
+        padding: 10px 20px;
+        white-space: nowrap;
+        text-align: left;
+    }
+
+    .nav-dropdown-menu a:hover {
+        color: #c97991;
+    }
+
+    .nav-dropdown:hover .dropdown-arrow,
+    .nav-dropdown:focus-within .dropdown-arrow {
+        transform: rotate(180deg);
+    }
+}
+
 
 </style>
 </head>
@@ -2179,7 +2249,24 @@ mask-image:
 
         <ul class="nav-links" id="navLinks">
             <li><a href="#uvod">Úvod</a></li>
-            <li><a href="#galerie">Galerie</a></li>
+            
+<li class="nav-dropdown">
+    <button type="button"
+            class="nav-dropdown-toggle"
+            aria-expanded="false">
+        Galerie
+        <span class="dropdown-arrow">⌄</span>
+    </button>
+
+    <ul class="nav-dropdown-menu">
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#medvidci">Medvídci</a></li>
+        <li><a href="#naramky">Náramky</a></li>
+        <li><a href="#privesky">Přívěsky</a></li>
+        <li><a href="#tasky">Tašky</a></li>
+    </ul>
+</li>
+
             <li><a href="#o-adelce">Adélka</a></li>
             <li><a href="#pribeh">Můj svět</a></li>
             <li><a href="#kontakt">Kontakt</a></li>
@@ -2337,7 +2424,7 @@ mask-image:
    
 <!-- PODGALERIE – MEDVÍDCI -->
 
-<div class="subgallery">
+<div class="subgallery" id="medvidci">
 
     <h3 class="subgallery-title">Medvídci z růžiček</h3>
 
@@ -2366,7 +2453,7 @@ mask-image:
    
 <!-- PODGALERIE – NÁRAMKY -->
 
-<div class="subgallery subgallery-bracelets">
+<div class="subgallery subgallery-bracelets" id="naramky">
 
     <h3 class="subgallery-title">Náramky</h3>
 
@@ -2389,7 +2476,7 @@ mask-image:
    
 <!-- PODGALERIE – PŘÍVĚSKY -->
 
-<div class="subgallery subgallery-pendants">
+<div class="subgallery subgallery-bags" id="tasky">
 
     <h3 class="subgallery-title">Přívěsky a drobnosti</h3>
    <p class="subgallery-price">cena přívěsků 30 – 70 Kč</p>
