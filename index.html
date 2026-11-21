@@ -593,6 +593,52 @@ color:#fff;
     display:none;
 }
 
+   
+/* PODGALERIE – MEDVÍDCI */
+
+.subgallery {
+    margin-top: 65px;
+    text-align: center;
+}
+
+.subgallery-title {
+    margin-bottom: 12px;
+    color: #222;
+    font-size: 1.25rem;
+    font-weight: 500;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+}
+
+.subgallery-price {
+    margin-bottom: 30px;
+    color: #c97991;
+    font-size: .85rem;
+    line-height: 1.8;
+}
+
+.subgallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 250px));
+    justify-content: center;
+    gap: 18px;
+}
+
+.subgallery-grid .gallery-item,
+.subgallery-grid .gallery-item:nth-child(n) {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    background: #fff;
+}
+
+.subgallery-grid .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
 
 /* =========================================================
    ČERNÝ PŘEDĚL
@@ -1780,6 +1826,36 @@ mask-image:
         <div class="gallery-item"><img src="30_sperky.webp" alt="Ručně vyráběné šperky od Adélky"></div>
 
     </div>
+
+   
+<!-- PODGALERIE – MEDVÍDCI -->
+
+<div class="subgallery">
+
+    <h3 class="subgallery-title">Medvídci z růžiček</h3>
+
+    <p class="subgallery-price">
+        Malý medvídek 180 Kč · Velký medvídek 250 Kč
+    </p>
+
+    <div class="subgallery-grid">
+
+        <div class="gallery-item">
+            <img src="medvidek1.webp" alt="Ručně vyráběný medvídek z růžiček" loading="lazy">
+        </div>
+
+        <div class="gallery-item">
+            <img src="medvidek2.webp" alt="Ručně vyráběný medvídek z růžiček" loading="lazy">
+        </div>
+
+        <div class="gallery-item">
+            <img src="medvidek3.webp" alt="Ručně vyráběný medvídek z růžiček" loading="lazy">
+        </div>
+
+    </div>
+
+</div>
+
 
    <div class="gallery-cta">
     <a href="#kontakt" class="btn">
