@@ -2183,10 +2183,16 @@ mask-image:
     }
 
     .dropdown-arrow {
-        font-size: 18px;
-        line-height: 1;
-        transition: transform .25s ease;
-    }
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: rotate(45deg);
+    transition: transform .25s ease;
+    margin-left: 3px;
+    margin-top: -4px;
+}
 
     .nav-dropdown-menu {
         display: none;
@@ -2224,9 +2230,9 @@ mask-image:
     }
 
     .nav-dropdown:hover .dropdown-arrow,
-    .nav-dropdown:focus-within .dropdown-arrow {
-        transform: rotate(180deg);
-    }
+.nav-dropdown:focus-within .dropdown-arrow {
+    transform: rotate(225deg);
+}
 }
 
 
@@ -2255,7 +2261,7 @@ mask-image:
             class="nav-dropdown-toggle"
             aria-expanded="false">
         Galerie
-        <span class="dropdown-arrow">⌄</span>
+        <span class="dropdown-arrow"></span>
     </button>
 
     <ul class="nav-dropdown-menu">
