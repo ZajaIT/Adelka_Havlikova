@@ -2237,6 +2237,83 @@ mask-image:
 }
 }
 
+   /* =========================================
+   ROZBALOVACÍ GALERIE – TABLET A MOBIL
+========================================= */
+
+@media (max-width: 800px) {
+
+    .nav-links {
+        overflow-y: auto;
+        justify-content: safe center;
+    }
+
+    .nav-dropdown {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-dropdown-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+        border: none;
+        background: transparent;
+        color: #000;
+
+        font-family: "Montserrat", sans-serif;
+        font-size: .8rem;
+        font-weight: 500;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+
+        cursor: pointer;
+    }
+
+    .dropdown-arrow {
+        display: inline-block;
+        width: 7px;
+        height: 7px;
+        border-right: 1.5px solid currentColor;
+        border-bottom: 1.5px solid currentColor;
+        transform: rotate(45deg);
+        transition: transform .25s ease;
+        margin-top: -4px;
+    }
+
+    .nav-dropdown-menu {
+        display: none;
+        list-style: none;
+        margin-top: 18px;
+        padding: 0;
+    }
+
+    .nav-dropdown.open .nav-dropdown-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .nav-dropdown-menu a {
+        font-size: .72rem;
+        font-weight: 400;
+        color: #555;
+        letter-spacing: .08em;
+    }
+
+    .nav-dropdown-menu a::after {
+        display: none;
+    }
+
+    .nav-dropdown.open .dropdown-arrow {
+        transform: rotate(225deg);
+        margin-top: 4px;
+    }
+}
+
 
 </style>
 </head>
@@ -2857,6 +2934,23 @@ navAnchors.forEach(link => {
         document.body.classList.remove("menu-open");
 
     });
+
+});
+
+   /* ROZBALOVACÍ GALERIE – TABLET A MOBIL */
+
+const galleryDropdown = document.querySelector(".nav-dropdown");
+const galleryDropdownToggle = document.querySelector(".nav-dropdown-toggle");
+
+galleryDropdownToggle.addEventListener("click", () => {
+
+    if (window.innerWidth <= 800) {
+
+        const isOpen = galleryDropdown.classList.toggle("open");
+
+        galleryDropdownToggle.setAttribute("aria-expanded", isOpen);
+
+    }
 
 });
 
