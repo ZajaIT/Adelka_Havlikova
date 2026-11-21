@@ -2091,6 +2091,7 @@ mask-image:
 }
 
 
+
 /* =========================================
    TAŠKY – TABLET
 ========================================= */
@@ -2100,23 +2101,33 @@ mask-image:
     .subgallery-bags .bags-grid {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 16px;
+        gap: 12px;
+        width: 100%;
+        max-width: 100%;
+        margin: 30px auto 0;
     }
 
     .subgallery-bags .bags-grid .gallery-item,
     .subgallery-bags .bags-grid .gallery-item:nth-child(n) {
+        grid-column: auto;
+        grid-row: auto;
         width: 100%;
         height: auto;
+        min-width: 0;
         aspect-ratio: auto;
+        background: transparent;
     }
 
     .subgallery-bags .bags-grid .gallery-item img {
+        display: block;
         width: 100%;
         height: auto;
+        max-width: 100%;
         max-height: none;
         object-fit: contain;
     }
 }
+
 
 
 /* =========================================
