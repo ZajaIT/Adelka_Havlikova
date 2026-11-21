@@ -2050,6 +2050,105 @@ mask-image:
     }
 }
 
+   
+/* =========================================
+   PODGALERIE – RUČNĚ ZDOBENÉ TAŠKY
+========================================= */
+
+/* PC – 4 fotografie vedle sebe */
+
+.subgallery-bags {
+    position: relative;
+    z-index: 21;
+}
+
+.subgallery-bags .bags-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.subgallery-bags .bags-grid .gallery-item,
+.subgallery-bags .bags-grid .gallery-item:nth-child(n) {
+    position: relative;
+    width: 100%;
+    height: auto;
+    aspect-ratio: auto;
+    min-width: 0;
+    background: transparent;
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+.subgallery-bags .bags-grid .gallery-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: 16px;
+}
+
+
+/* =========================================
+   TAŠKY – TABLET
+========================================= */
+
+@media (min-width: 601px) and (max-width: 1050px) {
+
+    .subgallery-bags .bags-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .subgallery-bags .bags-grid .gallery-item,
+    .subgallery-bags .bags-grid .gallery-item:nth-child(n) {
+        width: 100%;
+        height: auto;
+        aspect-ratio: auto;
+    }
+
+    .subgallery-bags .bags-grid .gallery-item img {
+        width: 100%;
+        height: auto;
+        max-height: none;
+        object-fit: contain;
+    }
+}
+
+
+/* =========================================
+   TAŠKY – MOBIL
+========================================= */
+
+@media (max-width: 600px) {
+
+    .subgallery-bags .bags-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .subgallery-bags .bags-grid .gallery-item,
+    .subgallery-bags .bags-grid .gallery-item:nth-child(n) {
+        width: 100%;
+        height: auto;
+        aspect-ratio: auto;
+    }
+
+    .subgallery-bags .bags-grid .gallery-item img {
+        width: 100%;
+        height: auto;
+        max-height: none;
+        object-fit: contain;
+    }
+}
+
+
 
 </style>
 </head>
@@ -2302,6 +2401,37 @@ mask-image:
     </div>
 
 </div>
+
+   
+<!-- PODGALERIE – RUČNĚ ZDOBENÉ TAŠKY -->
+<div class="subgallery subgallery-bags">
+
+    <h3 class="subgallery-title">Ručně zdobené tašky</h3>
+
+    <p class="subgallery-price">cena tašek 65 Kč</p>
+
+    <div class="subgallery-grid bags-grid">
+
+        <div class="gallery-item">
+            <img src="taska1.webp" alt="Ručně zdobená taška od Adélky" loading="lazy">
+        </div>
+
+        <div class="gallery-item">
+            <img src="taska2.webp" alt="Ručně zdobená taška od Adélky" loading="lazy">
+        </div>
+
+        <div class="gallery-item">
+            <img src="taska3.webp" alt="Ručně zdobená taška od Adélky" loading="lazy">
+        </div>
+
+        <div class="gallery-item">
+            <img src="taska4.webp" alt="Ručně zdobená taška od Adélky" loading="lazy">
+        </div>
+
+    </div>
+
+</div>
+
 
 </section>
 
