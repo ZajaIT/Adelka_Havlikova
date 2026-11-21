@@ -624,19 +624,35 @@ color:#fff;
     gap: 18px;
 }
 
+
+/* MEDVÍDCI – STEJNÁ VÝŠKA FOTEK */
+
+.subgallery-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+}
+
 .subgallery-grid .gallery-item,
 .subgallery-grid .gallery-item:nth-child(n) {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1 / 1;
-    background: #fff;
+    width: auto;
+    height: 320px;
+    aspect-ratio: auto;
+    flex: 0 0 auto;
+    overflow: hidden;
+    border-radius: 16px;
 }
 
 .subgallery-grid .gallery-item img {
-    width: 100%;
+    display: block;
+    width: auto;
     height: 100%;
+    max-width: none;
     object-fit: contain;
+    border-radius: 16px;
 }
+
 
 
 
