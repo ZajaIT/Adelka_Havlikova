@@ -1892,6 +1892,148 @@ mask-image:
     }
 }
 
+   
+/* =========================================
+   PODGALERIE – PŘÍVĚSKY
+========================================= */
+
+/* PC */
+
+.subgallery-pendants {
+    position: relative;
+    z-index: 21;
+}
+
+.subgallery-pendants .subgallery-grid {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    margin-top: 30px;
+}
+
+.subgallery-pendants .subgallery-grid .gallery-item,
+.subgallery-pendants .subgallery-grid .gallery-item:nth-child(n) {
+    position: relative;
+    z-index: 3;
+    width: auto;
+    height: 320px;
+    aspect-ratio: auto;
+    flex: 0 0 auto;
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+.subgallery-pendants .subgallery-grid .gallery-item img {
+    display: block;
+    width: auto;
+    height: 100%;
+    max-width: none;
+    object-fit: contain;
+    border-radius: 16px;
+}
+
+
+/* =========================================
+   PŘÍVĚSKY – TABLET
+========================================= */
+
+@media (min-width: 601px) and (max-width: 1050px) {
+
+    .subgallery-pendants .subgallery-grid {
+        display: grid;
+        grid-template-columns: repeat(2, max-content);
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .subgallery-pendants .subgallery-grid .gallery-item,
+    .subgallery-pendants .subgallery-grid .gallery-item:nth-child(n) {
+        width: auto;
+        height: 240px;
+        aspect-ratio: auto;
+        flex: none;
+    }
+
+    .subgallery-pendants .subgallery-grid .gallery-item:nth-child(1) {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .subgallery-pendants .subgallery-grid .gallery-item:nth-child(3) {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .subgallery-pendants .subgallery-grid .gallery-item:nth-child(2) {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        justify-self: center;
+        height: 220px;
+    }
+
+    .subgallery-pendants .subgallery-grid .gallery-item img {
+        display: block;
+        width: auto;
+        height: 100%;
+        max-width: none;
+        object-fit: contain;
+    }
+}
+
+
+/* =========================================
+   PŘÍVĚSKY – MOBIL
+========================================= */
+
+@media (max-width: 600px) {
+
+    .subgallery-pendants .subgallery-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        justify-content: center;
+        align-items: start;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .subgallery-pendants .subgallery-grid .gallery-item,
+    .subgallery-pendants .subgallery-grid .gallery-item:nth-child(n) {
+        width: 100%;
+        height: auto;
+        aspect-ratio: auto;
+        flex: none;
+    }
+
+    .subgallery-pendants .subgallery-grid .gallery-item:nth-child(1) {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .subgallery-pendants .subgallery-grid .gallery-item:nth-child(3) {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .subgallery-pendants .subgallery-grid .gallery-item:nth-child(2) {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        justify-self: center;
+        width: 100%;
+    }
+
+    .subgallery-pendants .subgallery-grid .gallery-item img {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        object-fit: contain;
+    }
+}
+
 
 </style>
 </head>
@@ -2119,6 +2261,30 @@ mask-image:
 
 </div>
 
+   
+<!-- PODGALERIE – PŘÍVĚSKY -->
+
+<div class="subgallery subgallery-pendants">
+
+    <h3 class="subgallery-title">Přívěsky a drobnosti</h3>
+
+    <div class="subgallery-grid">
+
+        <div class="gallery-item">
+            <img src="privesek2.webp" alt="Ručně vyráběné přívěsky a drobnosti" loading="lazy">
+        </div>
+
+        <div class="gallery-item">
+            <img src="privesek1.webp" alt="Ručně vyráběné přívěsky a drobnosti" loading="lazy">
+        </div>
+
+        <div class="gallery-item">
+            <img src="privesek3.webp" alt="Ručně vyráběné přívěsky a drobnosti" loading="lazy">
+        </div>
+
+    </div>
+
+</div>
 
 </section>
 
