@@ -2959,8 +2959,14 @@ galleryDropdownToggle.addEventListener("click", () => {
    GALERIE / LIGHTBOX
 ========================================================= */
 
-const galleryImages = [
-    ...document.querySelectorAll(".gallery-item img")
+/* SAMOSTATNÉ GALERIE */
+
+const galleryGroups = [
+    [...document.querySelectorAll(".gallery > .gallery-item img")],
+    [...document.querySelectorAll("#medvidci .gallery-item img")],
+    [...document.querySelectorAll("#naramky .gallery-item img")],
+    [...document.querySelectorAll("#privesky .gallery-item img")],
+    [...document.querySelectorAll("#tasky .gallery-item img")]
 ];
 
 const lightbox = document.getElementById("lightbox");
@@ -2969,37 +2975,38 @@ const lightboxClose = document.getElementById("lightboxClose");
 const lightboxPrev = document.getElementById("lightboxPrev");
 const lightboxNext = document.getElementById("lightboxNext");
 
+let currentGallery = [];
 let currentImage = 0;
 
+function showImage(index) {
 
-function showImage(index){
+    if (!currentGallery.length) return;
 
-    if(index < 0){
-        index = galleryImages.length - 1;
+    if (index < 0) {
+        index = currentGallery.length - 1;
     }
 
-    if(index >= galleryImages.length){
+    if (index >= currentGallery.length) {
         index = 0;
     }
 
     currentImage = index;
-
-    lightboxImage.src = galleryImages[currentImage].src;
-
+    lightboxImage.src = currentGallery[currentImage].src;
 }
 
+galleryGroups.forEach(group => {
 
-galleryImages.forEach((image,index) => {
+    group.forEach((image, index) => {
 
-    image.parentElement.addEventListener("click", () => {
+        image.parentElement.addEventListener("click", () => {
 
-        currentImage = index;
+            currentGallery = group;
+            showImage(index);
 
-        showImage(currentImage);
+            lightbox.classList.add("active");
+            document.body.style.overflow = "hidden";
 
-        lightbox.classList.add("active");
-
-        document.body.style.overflow = "hidden";
+        });
 
     });
 
