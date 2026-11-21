@@ -1975,13 +1975,30 @@ mask-image:
         height: 220px;
     }
 
-    .subgallery-pendants .subgallery-grid .gallery-item img {
-        display: block;
-        width: auto;
-        height: 100%;
-        max-width: none;
-        object-fit: contain;
-    }
+    
+/* Svislé fotografie – ořez pouze na výšku */
+
+.subgallery-pendants .subgallery-grid .gallery-item:nth-child(1) img,
+.subgallery-pendants .subgallery-grid .gallery-item:nth-child(3) img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.subgallery-pendants .subgallery-grid .gallery-item:nth-child(2) {
+    height: auto;
+}
+
+.subgallery-pendants .subgallery-grid .gallery-item:nth-child(2) img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: none;
+    object-fit: contain;
+}
+
 }
 
 
@@ -2267,6 +2284,7 @@ mask-image:
 <div class="subgallery subgallery-pendants">
 
     <h3 class="subgallery-title">Přívěsky a drobnosti</h3>
+   <p class="subgallery-price">cena přívěsků 30 – 70 Kč</p>
 
     <div class="subgallery-grid">
 
