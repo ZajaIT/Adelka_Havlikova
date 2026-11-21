@@ -1936,6 +1936,7 @@ mask-image:
 }
 
 
+
 /* =========================================
    PŘÍVĚSKY – TABLET
 ========================================= */
@@ -1944,18 +1945,21 @@ mask-image:
 
     .subgallery-pendants .subgallery-grid {
         display: grid;
-        grid-template-columns: repeat(2, max-content);
+        grid-template-columns: repeat(2, 1fr);
         justify-content: center;
-        align-items: center;
+        align-items: start;
         gap: 16px;
+        max-width: 540px;
+        margin: 30px auto 0;
     }
 
-    .subgallery-pendants .subgallery-grid .gallery-item,
-    .subgallery-pendants .subgallery-grid .gallery-item:nth-child(n) {
-        width: auto;
-        height: 240px;
-        aspect-ratio: auto;
-        flex: none;
+    /* Dvě svislé fotografie nahoře */
+    .subgallery-pendants .subgallery-grid .gallery-item:nth-child(1),
+    .subgallery-pendants .subgallery-grid .gallery-item:nth-child(3) {
+        width: 100%;
+        height: 300px;
+        min-width: 0;
+        background: transparent;
     }
 
     .subgallery-pendants .subgallery-grid .gallery-item:nth-child(1) {
@@ -1968,38 +1972,33 @@ mask-image:
         grid-row: 1;
     }
 
+    .subgallery-pendants .subgallery-grid .gallery-item:nth-child(1) img,
+    .subgallery-pendants .subgallery-grid .gallery-item:nth-child(3) img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    /* Široká fotografie dole – bez ořezu */
     .subgallery-pendants .subgallery-grid .gallery-item:nth-child(2) {
         grid-column: 1 / -1;
         grid-row: 2;
-        justify-self: center;
-        height: 220px;
+        width: 100%;
+        height: auto;
+        min-width: 0;
+        background: transparent;
     }
 
-    
-/* Svislé fotografie – ořez pouze na výšku */
-
-.subgallery-pendants .subgallery-grid .gallery-item:nth-child(1) img,
-.subgallery-pendants .subgallery-grid .gallery-item:nth-child(3) img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+    .subgallery-pendants .subgallery-grid .gallery-item:nth-child(2) img {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        object-fit: contain;
+    }
 }
 
-.subgallery-pendants .subgallery-grid .gallery-item:nth-child(2) {
-    height: auto;
-}
-
-.subgallery-pendants .subgallery-grid .gallery-item:nth-child(2) img {
-    display: block;
-    width: 100%;
-    height: auto;
-    max-width: none;
-    object-fit: contain;
-}
-
-}
 
 
 /* =========================================
