@@ -2313,6 +2313,57 @@ mask-image:
         margin-top: 4px;
     }
 }
+   /* MEDVÍDCI – NOVÉ FOTOGRAFIE – PC */
+
+@media (min-width: 1051px) {
+
+    #medvidci .subgallery-grid {
+        flex-wrap: wrap;
+    }
+
+    #medvidci .subgallery-grid::after {
+        content: "";
+        flex-basis: 100%;
+        height: 0;
+        order: 1;
+    }
+
+    #medvidci .gallery-item:nth-child(n+4) {
+        order: 2;
+    }
+}
+
+
+/* MEDVÍDCI – NOVÉ FOTOGRAFIE – TABLET */
+
+@media (min-width: 601px) and (max-width: 1050px) {
+
+    #medvidci .gallery-item:nth-child(4) {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    #medvidci .gallery-item:nth-child(5) {
+        grid-column: 2;
+        grid-row: 3;
+    }
+}
+
+
+/* MEDVÍDCI – NOVÉ FOTOGRAFIE – MOBIL */
+
+@media (max-width: 600px) {
+
+    #medvidci .gallery-item:nth-child(4) {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    #medvidci .gallery-item:nth-child(5) {
+        grid-column: 2;
+        grid-row: 3;
+    }
+}
 
 
 </style>
@@ -2530,6 +2581,14 @@ mask-image:
         <div class="gallery-item">
             <img src="medvidek3.webp" alt="Ručně vyráběný medvídek z růžiček" loading="lazy">
         </div>
+
+       <div class="gallery-item">
+    <img src="novymeda1.webp" alt="Ručně vyráběný medvídek z růžiček" loading="lazy">
+</div>
+
+<div class="gallery-item">
+    <img src="novymeda2.webp" alt="Ručně vyráběný medvídek z růžiček" loading="lazy">
+</div>
 
     </div>
 
