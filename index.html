@@ -2318,18 +2318,47 @@ mask-image:
 @media (min-width: 1051px) {
 
     #medvidci .subgallery-grid {
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        gap: 18px;
+        align-items: center;
     }
 
-    #medvidci .subgallery-grid::after {
-        content: "";
-        flex-basis: 100%;
-        height: 0;
-        order: 1;
+    #medvidci .gallery-item:nth-child(n) {
+        width: 100%;
+        height: auto;
+        background: transparent;
     }
 
-    #medvidci .gallery-item:nth-child(n+4) {
-        order: 2;
+    #medvidci .gallery-item img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    #medvidci .gallery-item:nth-child(1) {
+        grid-column: 1 / 4;
+        grid-row: 1;
+    }
+
+    #medvidci .gallery-item:nth-child(2) {
+        grid-column: 4 / 10;
+        grid-row: 1;
+    }
+
+    #medvidci .gallery-item:nth-child(3) {
+        grid-column: 10 / 13;
+        grid-row: 1;
+    }
+
+    #medvidci .gallery-item:nth-child(4) {
+        grid-column: 4 / 7;
+        grid-row: 2;
+    }
+
+    #medvidci .gallery-item:nth-child(5) {
+        grid-column: 7 / 10;
+        grid-row: 2;
     }
 }
 
